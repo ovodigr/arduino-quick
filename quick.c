@@ -2,7 +2,7 @@
 #include "pins_arduino.h"
 void digitalWrite2(int pin, int on) {
 
-  if (pin>7 && pin<=13)
+  if (pin>7 && pin<=13) 
   {
     	if (on==1)
     	 PORTB = PORTB | (1<<(pin-8)); // устанавливаем состояние pin13 как HIGH //PORTB = PORTB || 0b10000000;
