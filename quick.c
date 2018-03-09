@@ -23,17 +23,20 @@ void digitalWrite2(int pin, int on) {
 
 int digitalRead2(int pin) {
 
-	int status;
-  if (pin>7 && pin<=13)  
-			//status = PORTB >> (pin-8);  
-			status = PORTB && (1 << (pin-8));  
+	int status=0;
+
+  if (pin>7 && pin<=13)
+  	status = PORTB >> (pin-8);
   else
+  if (pin>0 && pin<=7)
+  	status = PORTD >> pin;
+ 	
   
-  if(pin>0 && pin<=7)
-			status = PORTD >> pin; 
-  
-  if (status==1) return HIGH;
-	return LOW;
+   	 if (status>=1) return pin;
+	return pin;
 }
+
+
+
 
 
